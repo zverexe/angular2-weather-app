@@ -38,6 +38,7 @@ export class WeatherListComponent implements OnInit {
                           week[item.dt_txt.substring(0,11)][item.dt_txt.substring(11)];
                       })
                       console.log(data);
+
                       console.log(week);
                   })
           });
