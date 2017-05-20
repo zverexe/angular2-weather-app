@@ -1,0 +1,8 @@
+<div class="add-city">
+  <form action="" (ngSubmit)="addCity(f); f.reset();" #f="ngForm">
+    <md-input-container class="example-full-width">
+    <input mdInput placeholder="Add city" name="city" [(ngModel)]="city">
+    </md-input-container>
+    <button md-raised-button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>

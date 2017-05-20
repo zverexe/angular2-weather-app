@@ -1,0 +1,18 @@
+form{
+    display: flex;
+    align-items: flex-start;
+}
+
+.btn{
+    margin-left: 10px;
+}
+
+@media (max-width: 767px) {
+    form{
+        margin-top: 30px;
+    }
+
+    .mat-input-container{
+        width: 100%;
+    }
+}

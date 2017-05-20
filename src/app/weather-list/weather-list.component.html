@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-sm-5">
+    <div class="current-city">
+      <h2>Weather in {{currentCity.city}}</h2>
+      <div class="weather-item">
+        <md-card class="main-city">
+          <h4>{{currentCity.city}}</h4>
+          <div class="weather-description">
+            <p>{{currentCity.description}}</p>
+            <div *ngIf="currentCity.description =='clear sky'" class="sunny-container">
+              <div class="sunny"></div>
+            </div>
+            <div *ngIf="currentCity.description =='broken clouds' ||
+                        currentCity.description =='scattered clouds'"
+                        class="cloudy-container">
+              <div class="cloudy"></div>
+            </div>
+            <div *ngIf="currentCity.description =='light intensity shower rain'" class="rainy-container">
+              <div class="rainy "></div>
+            </div>
+            <div *ngIf="currentCity.description =='snow'" class="snow-container">
+              <div class="snowy"></div>
+            </div>
+            <div *ngIf="currentCity.description =='thunderstorm'" class="storm-container">
+              <div class="stormy "></div>
+            </div>
+            <div *ngIf="currentCity.description =='starry'" class="starry-container">
+              <div class="starry"></div>
+            </div>
+            <div *ngIf="currentCity.description =='rainbow'" class="rainbow'-container">
+              <div class="rainbow "></div>
+            </div>
+          </div>
+          <div class="weather-item-footer">
+            <p>
+              <span>Min</span>
+              {{currentCity.minTemperature}}
+            </p>
+            <p>
+              <span>Max</span>
+              {{currentCity.maxTemperature}}
+            </p>
+          </div>
+        </md-card>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="weather-list">
+      <md-card class="user-city" *ngFor="let weatherItem of weatherItems">
+        <h4>{{weatherItem.city}}</h4>
+        <div class="weather-description">
+          <p>{{weatherItem.description}}</p>
+          <div *ngIf="weatherItem.description =='clear sky'" class="sunny-container">
+            <div class="sunny"></div>
+          </div>
+          <div *ngIf="weatherItem.description =='broken clouds' ||
+                weatherItem.description =='scattered clouds' ||
+                weatherItem.description =='few clouds'"
+               class="cloudy-container">
+            <div class="cloudy"></div>
+          </div>
+          <div *ngIf="weatherItem.description =='light intensity shower rain' ||
+                weatherItem.description == 'shower rain' ||
+                weatherItem.description == 'light rain'"
+                class="rainy-container">
+            <div class="rainy"></div>
+          </div>
+          <div *ngIf="weatherItem.description =='snow'" class="snow-container">
+            <div class="snowy"></div>
+          </div>
+          <div *ngIf="weatherItem.description =='thunderstorm'" class="storm-container">
+            <div class="stormy"></div>
+          </div>
+          <div *ngIf="weatherItem.description =='starry'" class="starry-container">
+            <div class="starry "></div>
+          </div>
+          <div *ngIf="weatherItem.description =='rainbow'" class="rainbow'-container">
+            <div class="rainbow "></div>
+          </div>
+        </div>
+        <div class="weather-item-footer">
+          <p>
+            <span>Min</span>
+            {{weatherItem.minTemperature}}
+          </p>
+          <p>
+            <span>Max</span>
+            {{weatherItem.maxTemperature}}
+          </p>
+        </div>
+      </md-card>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8">
+
+  </div>
+
+</div>
