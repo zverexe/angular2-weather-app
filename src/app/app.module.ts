@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule, MdCardModule, MdInputModule} from '@angular/material';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { WeatherItemComponent } from './weather-item/weather-item.component';
 import { WeatherListComponent } from './weather-list/weather-list.component';
@@ -27,7 +29,9 @@ import { WeatherSearchComponent } from './weather-search/weather-search.componen
     BrowserAnimationsModule,
     MdButtonModule,
     MdCardModule,
-    MdInputModule
+    MdInputModule,
+    NgbModule.forRoot()
+
   ],
   providers: [
     WeatherService
