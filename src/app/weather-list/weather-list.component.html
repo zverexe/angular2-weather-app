@@ -506,9 +506,9 @@
         <md-card class="user-city" *ngFor="let weatherItem of weatherItems">
           <div>
           <p>{{weatherItem.date}}</p>
-          <h4>{{weatherItem.city}}</h4>
+          <h4 class="city-name">{{weatherItem.city}}</h4>
           <div class="weather-description">
-            <p>{{weatherItem.description}}</p>
+            <p class="description">{{weatherItem.description}}</p>
             <div *ngIf="weatherItem.description =='Clear'" class="sunny-container">
               <div class="sunny"></div>
             </div>
@@ -534,7 +534,6 @@
             </div>
           </div>
           <div class="location-temperature">
-
             <p>
               <span>Min:</span>
               {{weatherItem.minTemperature}}
@@ -555,7 +554,6 @@
             </div>
           </div>
           </div>
-
         </md-card>
       </div>
     </div>
