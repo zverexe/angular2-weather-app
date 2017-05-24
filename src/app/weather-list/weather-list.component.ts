@@ -26,7 +26,11 @@ export class WeatherListComponent implements OnInit {
         .subscribe(data=> {
           this.weatherService.loadCurrentCity(data.lat, data.lon)
               .subscribe(data=>{
-                this.currentCity = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max, data.weather[0].main);
+                  let dat = new Date(data.dt*1000).toDateString();
+                  let formattedTime = dat.slice(0,10);
+                this.currentCity = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max,
+                    data.weather[0].main, formattedTime, data.main.humidity, data.main.pressure);
+                console.log(data);
               })
         });
     this.weatherItems = this.weatherService.getItem();
@@ -37,9 +41,8 @@ export class WeatherListComponent implements OnInit {
                       data.list.forEach(item => {
                           let dat = new Date(item.dt*1000).toDateString();
                           let formattedTime = dat.slice(0,10);
-                          let iconUrl = 'https://openweathermap.org/img/w/'+item.weather[0].icon+'.png';
                             this.week.push(new Week(item.temp.min, item.temp.max, item.weather[0].main, formattedTime,
-                                item.pressure, iconUrl, item.temp.day, item.temp.night));
+                                item.pressure, item.humidity, item.speed, item.temp.day, item.temp.night));
                             console.log(this.week);
                       })
                       console.log(data);
@@ -47,4 +50,5 @@ export class WeatherListComponent implements OnInit {
                   })
           });
   }
+
 }

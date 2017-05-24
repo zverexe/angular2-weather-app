@@ -22,7 +22,10 @@ export class WeatherSearchComponent implements OnInit {
     console.log(this.city);
     return this.weatherService.searchCity(this.city)
         .subscribe(data=>{
-          const weatherItem = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max, data.weather[0].description);
+            let dat = new Date(data.dt*1000).toDateString();
+            let formattedTime = dat.slice(0,10);
+          const weatherItem = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max, data.weather[0].main,
+              formattedTime, data.main.humidity, data.main.pressure);
 
           this.weatherService.addNewCity(weatherItem);
         })
