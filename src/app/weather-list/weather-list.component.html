@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="user-city">
-      <h2 class="user-city-title">Weather in {{currentCity.city}}</h2>
+      <h2 class="user-city-title">Weather in {{currentCity?.city}}</h2>
       <div class="weather-item">
-       <div *ngIf="currentCity.description =='Clouds'">
-          <app-clouds ></app-clouds>
+       <div *ngIf="currentCity?.description =='Clouds'">
+          <app-clouds [week]="week" [currentCity]="currentCity" [weatherItems]="weatherItems"></app-clouds>
         </div>
-        <div *ngIf="currentCity.description =='Clear'">
-          <app-sun></app-sun>
+        <div *ngIf="currentCity?.description =='Clear'">
+          <app-sun [week]="week" [currentCity]="currentCity" [weatherItems]="weatherItems"></app-sun>
         </div>
-       <div *ngIf="currentCity.description =='Rain'">
-          <app-rain></app-rain>
+       <div *ngIf="currentCity?.description =='Rain'">
+          <app-rain [week]="week" [currentCity]="currentCity" [weatherItems]="weatherItems"></app-rain>
         </div>
       </div>
     </div>
