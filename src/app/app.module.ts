@@ -13,13 +13,19 @@ import { WeatherListComponent } from './weather-list/weather-list.component';
 
 import { WeatherService } from './service/weather.service';
 import { WeatherSearchComponent } from './weather-search/weather-search.component';
+import { CloudsComponent } from './clouds/clouds.component';
+import { SunComponent } from './sun/sun.component';
+import { RainComponent } from './rain/rain.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherItemComponent,
     WeatherListComponent,
-    WeatherSearchComponent
+    WeatherSearchComponent,
+    CloudsComponent,
+    SunComponent,
+    RainComponent
 
   ],
   imports: [
