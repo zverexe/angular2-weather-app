@@ -1,0 +1,397 @@
+.main-city{
+  background-image: url(../../assets/storm_by_szorny_stock-d581vwa.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  span{
+    font-weight: 500;
+  }
+  /* ################################################### */
+  /* ## CLOUD ########################################## */
+  /* ################################################### */
+
+
+  .cloud div:nth-child(1) .cloud_form{
+    top : 20px;
+    position : absolute;
+    opacity : 1;
+
+    animation-name : cloud_moove;
+    animation-duration: 20s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -moz-transform: scale(0.5);
+  }
+  .cloud div:nth-child(1) .cloud_form div{
+    background-color : grey;
+    //zoom : 0.5;
+  }
+  .cloud_form{
+    opacity : 0;
+    animation-name : cloud_appear;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+  }
+  .cloud_form div{
+    background-color : black;
+    position : absolute;
+  }
+  .cloud_form div:nth-child(1){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 5px;
+    top : 95px;
+  }
+  .cloud_form div:nth-child(2){
+    height : 40px;
+    width : 40px;
+    border-radius : 50%;
+    left : 155px;
+    top : 115px;
+  }
+  .cloud_form div:nth-child(3){
+    height : 40px;
+    width : 140px;
+    left : 35px;
+    top : 115px;
+  }
+  .cloud_form div:nth-child(4){
+    height : 100px;
+    width : 100px;
+    border-radius : 50%;
+    left : 35px;
+    top : 45px;
+  }
+  .cloud_form div:nth-child(5){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 120px;
+    top : 85px;
+  }
+  @keyframes cloud_appear{
+    to{
+      opacity : 1;
+    }
+  }
+  @keyframes cloud_moove{
+    0%{
+      left : calc(80%);
+
+      opacity : 0;
+    }
+    10%{
+      //left : calc(95% - 100px);
+      opacity : 0.2;
+    }
+    90%{
+      //left : 5%;
+      opacity : 0.5;
+    }
+    100%{
+      left : 0%;
+
+      opacity : 0;
+    }
+  }
+
+  /* ################################################### */
+  /* ## CLOUD ########################################## */
+  /* ################################################### */
+  .second-cloud div:nth-child(1) .second_cloud_form{
+    top : 120px;
+    position : absolute;
+    opacity : 1;
+
+    animation-name : second_cloud_moove;
+    animation-duration: 25s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -moz-transform: scale(0.5);
+
+  }
+  .second-cloud div:nth-child(1) .second_cloud_form div{
+    background-color : grey;
+    //zoom : 0.5;
+  }
+  .second_cloud_form{
+    /*opacity : 0;
+    animation-name : second_cloud_appear;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;*/
+    @extend .cloud_form;
+  }
+  .second_cloud_form div{
+    background-color : black;
+    position : absolute;
+  }
+  .second_cloud_form div:nth-child(1){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 5px;
+    top : 95px;
+  }
+  .second_cloud_form div:nth-child(2){
+    height : 40px;
+    width : 40px;
+    border-radius : 50%;
+    left : 155px;
+    top : 115px;
+  }
+  .second_cloud_form div:nth-child(3){
+    height : 40px;
+    width : 140px;
+    left : 35px;
+    top : 115px;
+  }
+  .second_cloud_form div:nth-child(4){
+    height : 100px;
+    width : 100px;
+    border-radius : 50%;
+    left : 35px;
+    top : 45px;
+  }
+  .second_cloud_form div:nth-child(5){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 120px;
+    top : 85px;
+  }
+  @keyframes second_cloud_appear{
+    to{
+      opacity : 1;
+    }
+  }
+  @keyframes second_cloud_moove{
+    0%{
+      right : calc(80%);
+
+      opacity : 0;
+    }
+    10%{
+      //left : calc(95% - 100px);
+      opacity : 0.3;
+    }
+    90%{
+      //left : 5%;
+      opacity : 0.5;
+    }
+    100%{
+      right : 10%;
+
+      opacity : 0.2;
+    }
+  }
+
+  /* ################################################### */
+  /* ## CLOUD ########################################## */
+  /* ################################################### */
+  .third-cloud div:nth-child(1) .third_cloud_form{
+    top : 280px;
+    position : absolute;
+    opacity : 1;
+
+    animation-name : third_cloud_moove;
+    animation-duration: 35s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -moz-transform: scale(0.5);
+  }
+  .third-cloud div:nth-child(1) .third_cloud_form div{
+    background-color : grey;
+    //zoom : 0.5;
+  }
+  .third_cloud_form{
+    /*opacity : 0;
+    animation-name : third_cloud_moove;
+
+    animation-duration: 18s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -moz-transform: scale(0.5);*/
+    @extend .cloud_form;
+
+  }
+  .third_cloud_form div{
+    background-color : black;
+    position : absolute;
+  }
+  .third_cloud_form div:nth-child(1){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 5px;
+    top : 95px;
+  }
+  .third_cloud_form div:nth-child(2){
+    height : 40px;
+    width : 40px;
+    border-radius : 50%;
+    left : 155px;
+    top : 115px;
+  }
+  .third_cloud_form div:nth-child(3){
+    height : 40px;
+    width : 140px;
+    left : 35px;
+    top : 115px;
+  }
+  .third_cloud_form div:nth-child(4){
+    height : 100px;
+    width : 100px;
+    border-radius : 50%;
+    left : 35px;
+    top : 45px;
+  }
+  .third_cloud_form div:nth-child(5){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 120px;
+    top : 85px;
+  }
+  @keyframes third_cloud_appear{
+    to{
+      opacity : 1;
+    }
+  }
+  @keyframes third_cloud_moove{
+    0%{
+      right : calc(90%);
+
+      opacity : 0;
+    }
+    10%{
+      //left : calc(95% - 100px);
+      opacity : 0.3;
+    }
+    90%{
+      //left : 5%;
+      opacity : 0.5;
+    }
+    100%{
+      right : 15%;
+
+      opacity : 0.2;
+    }
+  }
+
+  /* ################################################### */
+  /* ## CLOUD ########################################## */
+  /* ################################################### */
+  .fourth-cloud div:nth-child(1) .fourth_cloud_form{
+    bottom: 190px;
+    position : absolute;
+    opacity : 1;
+
+    animation-name : fourth_cloud_moove;
+    animation-duration: 35s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -moz-transform: scale(0.5);
+  }
+  .fourth-cloud div:nth-child(1) .fourth_cloud_form div{
+    background-color : grey;
+    //zoom : 0.5;
+  }
+  .fourth_cloud_form{
+    /*opacity : 0;
+    animation-name : second_cloud_appear;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;*/
+    @extend .cloud_form;
+  }
+  .fourth_cloud_form div{
+    background-color : black;
+    position : absolute;
+  }
+  .fourth_cloud_form div:nth-child(1){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 5px;
+    top : 95px;
+  }
+  .fourth_cloud_form div:nth-child(2){
+    height : 40px;
+    width : 40px;
+    border-radius : 50%;
+    left : 155px;
+    top : 115px;
+  }
+  .fourth_cloud_form div:nth-child(3){
+    height : 40px;
+    width : 140px;
+    left : 35px;
+    top : 115px;
+  }
+  .fourth_cloud_form div:nth-child(4){
+    height : 100px;
+    width : 100px;
+    border-radius : 50%;
+    left : 35px;
+    top : 45px;
+  }
+  .fourth_cloud_form div:nth-child(5){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 120px;
+    top : 85px;
+  }
+  @keyframes fourth_cloud_appear{
+    to{
+      opacity : 1;
+    }
+  }
+  @keyframes fourth_cloud_moove{
+    0%{
+      left : calc(90%);
+
+      opacity : 0;
+    }
+    10%{
+      //left : calc(95% - 100px);
+      opacity : 0.3;
+    }
+    90%{
+      //left : 5%;
+      opacity : 0.6;
+    }
+    100%{
+     left : 0%;
+
+      opacity : 0.1;
+    }
+  }
+
+}
+
+@media (max-width: 767px) {
+  /*.cloud_form, .second_cloud_form, .third_cloud_form, .fourth_cloud_form{
+    display: none;
+    animation: none;
+  }*/
+}
