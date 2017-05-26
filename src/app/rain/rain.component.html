@@ -118,11 +118,11 @@
               {{day.maxTemperature}}℃
             </p>
           </div>
+          <p class="description">{{day.description}}</p>
         </ng-template>
         <ng-template ngbTabContent>
           <div class="weather-description">
             <div>
-              <p class="description">{{day.description}}</p>
               <p class="parameter-title">Pressure: <span>{{day.pressure}}</span></p>
               <p class="parameter-title">Humidity: <span>{{day.humidity}}%</span></p>
               <p class="parameter-title" placement="top" ngbTooltip="meter/sec">

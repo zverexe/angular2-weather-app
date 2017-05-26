@@ -1,0 +1,31 @@
+
+header{
+    padding: 0 15px;
+    .header-wrapper{
+        border-bottom: 1px solid #000;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+h3{
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    width: 200px;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 0;
+        .header-wrapper {
+            flex-direction: column;
+            border-bottom: 0;
+
+            h3 {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -17,8 +17,6 @@ export class WeatherListComponent implements OnInit {
   weatherItems: WeatherItem[];
   week: any = [];
 
-  weekForecats;
-
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {

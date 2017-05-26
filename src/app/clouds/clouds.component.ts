@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { WeatherService } from '../service/weather.service';
 import { WeatherItem } from '../weather';
@@ -10,16 +10,16 @@ import { Week } from '../week';
   templateUrl: './clouds.component.html',
   styleUrls: ['./clouds.component.scss']
 })
-export class CloudsComponent implements OnInit {
-  currentCity: WeatherItem;
+export class CloudsComponent {
+  @Input() currentCity: WeatherItem;
 
-  weatherItems: WeatherItem[];
+  @Input() weatherItems: WeatherItem[];
 
-  week: any = [];
+  @Input() week: any = [];
 
-  constructor(private weatherService: WeatherService) {
-  }
+  constructor() {}
 
+  /*
   ngOnInit() {
     this.weatherService.getCoordinates()
         .subscribe(data => {
@@ -48,6 +48,6 @@ export class CloudsComponent implements OnInit {
                 this.week.splice(0,1);
               })
         });
-  }
+  }*/
 
 }

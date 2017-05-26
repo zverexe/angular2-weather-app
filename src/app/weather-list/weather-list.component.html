@@ -4,13 +4,13 @@
       <h2 class="user-city-title">Weather in {{currentCity.city}}</h2>
       <div class="weather-item">
        <div *ngIf="currentCity.description =='Clouds'">
-          <app-clouds ></app-clouds>
+          <app-clouds [week] = week [currentCity] = currentCity [weatherItems] = weatherItems ></app-clouds>
         </div>
         <div *ngIf="currentCity.description =='Clear'">
-          <app-sun></app-sun>
+          <app-sun [week] = week [currentCity] = currentCity [weatherItems] = weatherItems ></app-sun>
         </div>
        <div *ngIf="currentCity.description =='Rain'">
-          <app-rain></app-rain>
+          <app-rain [week] = week [currentCity] = currentCity [weatherItems] = weatherItems ></app-rain>
         </div>
       </div>
     </div>
@@ -27,7 +27,6 @@
               <h4 class="city-name">{{weatherItem.city}}</h4>
               <div class="weather-description">
                 <p class="description">{{weatherItem.description}}</p>
-
                 <div *ngIf="weatherItem.description=='Clouds'" class="icon">
                   <div id="clouds">
                     <div class="cloud">
