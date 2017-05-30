@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 import { WeatherService } from '../service/weather.service';
 import { WeatherItem } from '../weather';
@@ -11,6 +10,7 @@ import { Week } from '../week';
   styleUrls: ['weather-list.component.scss']
 })
 export class WeatherListComponent implements OnInit {
+  @Output() weatherNow = new EventEmitter<string>();
 
   currentCity: WeatherItem;
 
@@ -31,6 +31,7 @@ export class WeatherListComponent implements OnInit {
                 this.currentCity = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max,
                     data.weather[0].main, formattedTime, data.main.humidity, data.main.pressure);
                 console.log(data);
+                this.weatherNow.emit(this.currentCity.description);
               })
         });
     this.weatherItems = this.weatherService.getItem();

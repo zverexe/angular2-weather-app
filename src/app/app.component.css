@@ -7,6 +7,13 @@ header{
     padding: 0 15px;
 }
 
+.app-wrapper{
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  height: 100vh;
+}
+
 h3{
     padding: 10px;
     background-color: #000;

@@ -1,17 +1,19 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <header>
-      <h3 class=" text-left">Weather App</h3>
-        <app-weather-search></app-weather-search>
-      </header>
+<div class="app-wrapper" [style.background]="'url(../assets/weather-'+weather+'.png)'">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <header>
+          <h3 class=" text-left">Weather App</h3>
+          <app-weather-search></app-weather-search>
+        </header>
+      </div>
     </div>
   </div>
-</div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <app-weather-list></app-weather-list>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <app-weather-list (weatherNow)="onWeatherInit($event)"></app-weather-list>
+      </div>
     </div>
   </div>
 </div>
