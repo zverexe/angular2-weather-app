@@ -1,0 +1,168 @@
+.main-city {
+  /*background-image: url(../../assets/blue-sky.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;*/
+  background: transparent;
+  span {
+    font-weight: 500;
+  }
+
+  /* ################################################### */
+  /* ## SUN ############################################ */
+  /* ################################################### */
+
+  .sun{
+    display: flex;
+    justify-content: flex-end;
+
+  }
+
+  .sun_form{
+    position: absolute;
+    top: -110px;
+    right: -90px;
+    opacity: 0.4;
+    z-index: 5;
+    height : 600px;
+    width : 600px;
+    animation-name : sun_turn;
+    animation-duration: 20s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -webkit-animation-delay : 0.7s;
+    animation-delay : 0.7s;
+  }
+  .sun_form div:nth-child(1){
+    height : 0px;
+    width : 0px;
+    border-radius : 50%;
+    top : 50%;
+    left : 50%;
+    background-color : #F4C800;
+    position : absolute;
+    animation-name : sun_center_appear;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+  }
+  .sun_form div:not(:nth-child(1)){
+    background-color : transparent;
+    width : 100%;
+    height : 100%;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    margin-left : -50%;
+    margin-top : -50%;
+  }
+  .sun_form div:not(:nth-child(1)) span{
+    background-color : transparent;
+    width : 0;
+    height : 0;
+    border-style : solid;
+    border-width : 18px 17px 30px 15px;
+    border-color : transparent transparent #F4C800 transparent;
+    position : absolute;
+    top : 40px;
+    //left : 95px;
+    opacity : 0;
+    animation-name : sun_arrow_appear;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+  }
+  .sun_form div:nth-child(2){
+    -ms-transform : rotate(45deg);
+    -webkit-transform : rotate(45deg);
+    transform : rotate(45deg);
+  }
+  .sun_form div:nth-child(3){
+    -ms-transform : rotate(90deg);
+    -webkit-transform : rotate(90deg);
+    transform : rotate(90deg);
+  }
+  .sun_form div:nth-child(4){
+    -ms-transform : rotate(135deg);
+    -webkit-transform : rotate(135deg);
+    transform : rotate(135deg);
+  }
+  .sun_form div:nth-child(5){
+    -ms-transform : rotate(180deg);
+    -webkit-transform : rotate(180deg);
+    transform : rotate(180deg);
+  }
+  .sun_form div:nth-child(6){
+    -ms-transform : rotate(225deg);
+    -webkit-transform : rotate(225deg);
+    transform : rotate(225deg);
+  }
+  .sun_form div:nth-child(7){
+    -ms-transform : rotate(270deg);
+    -webkit-transform : rotate(270deg);
+    transform : rotate(270deg);
+  }
+  .sun_form div:nth-child(8){
+    -ms-transform : rotate(315deg);
+    -webkit-transform : rotate(315deg);
+    transform : rotate(315deg);
+  }
+  @keyframes sun_center_appear{
+    to{
+      height : 50%;
+      width : 50%;
+      top : 25%;
+      left : 25%;
+    }
+  }
+  @keyframes sun_arrow_appear{
+    0%{
+      top : 50%;
+      opacity : 0;
+    }
+    50%{
+      top : 50%;
+      opacity : 0;
+    }
+    100%{
+      opacity : 1;
+      top : 20px;
+    }
+  }
+  @keyframes sun_turn{
+    from{
+      -ms-transform : rotate(0deg);
+      -webkit-transform : rotate(0deg);
+      transform : rotate(0deg);
+    }
+    to{
+      -ms-transform : rotate(360deg);
+      -webkit-transform : rotate(360deg);
+      transform : rotate(360deg);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  .main-city{
+    .sun_form{
+      width: 300px;
+      height: 300px;
+      top:0px;
+      right: -150px;
+    }
+    .sun_form div:not(:nth-child(1)) span{
+      border-width : 10px 15px 25px 15px;
+    }
+  }
+
+}
+
+

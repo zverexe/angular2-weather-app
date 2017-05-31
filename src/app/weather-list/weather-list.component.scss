@@ -1,0 +1,247 @@
+
+.location-temperature{
+  display: flex;
+  justify-content: flex-start;
+  p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:first-child{
+      margin-right: 30px;
+    }
+  }
+  span {
+    color: #9d9d9d;
+  }
+}
+
+.user-city-title{
+  padding-left: 15px;
+}
+
+.cities-list{
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.added-city{
+  margin-bottom: 20px;
+  width: 55%;
+  background-color: #25373D;
+}
+
+.parameter-title{
+  color: #B7B4B6;
+}
+
+.weather-description {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  span {
+    color: #000000;
+  }
+  .weather-description-footer {
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+}
+a {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  color: #777;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.forecast-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-card{
+  padding: 24px 12px;
+}
+
+.forecast-icons {
+  .weather{
+    height : 200px;
+    width : 200px;
+    position : relative;
+  }
+  /* ################################################### */
+  /* ## SUN ############################################ */
+  /* ################################################### */
+
+  .sun_form{
+    height : 200px;
+    width : 200px;
+    animation-name : sun_turn;
+    animation-duration: 20s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+    -webkit-animation-delay : 0.7s;
+    animation-delay : 0.7s;
+  }
+  .sun_form div:nth-child(1){
+    height : 0px;
+    width : 0px;
+    border-radius : 50%;
+    top : 50%;
+    left : 50%;
+    background-color : #F4C800;
+    position : absolute;
+    animation-name : sun_center_appear;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+  }
+  .sun_form div:not(:nth-child(1)){
+    background-color : transparent;
+    width : 100%;
+    height : 100%;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    margin-left : -50%;
+    margin-top : -50%;
+  }
+  .sun_form div:not(:nth-child(1)) span{
+    background-color : transparent;
+    width : 0;
+    height : 0;
+    border-style : solid;
+    border-width : 0 7px 20px 7px;
+    border-color : transparent transparent #F4C800 transparent;
+    position : absolute;
+    top : 40px;
+    left : 95px;
+    opacity : 0;
+    animation-name : sun_arrow_appear;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+  }
+  .sun_form div:nth-child(2){
+    -ms-transform : rotate(45deg);
+    -webkit-transform : rotate(45deg);
+    transform : rotate(45deg);
+  }
+  .sun_form div:nth-child(3){
+    -ms-transform : rotate(90deg);
+    -webkit-transform : rotate(90deg);
+    transform : rotate(90deg);
+  }
+  .sun_form div:nth-child(4){
+    -ms-transform : rotate(135deg);
+    -webkit-transform : rotate(135deg);
+    transform : rotate(135deg);
+  }
+  .sun_form div:nth-child(5){
+    -ms-transform : rotate(180deg);
+    -webkit-transform : rotate(180deg);
+    transform : rotate(180deg);
+  }
+  .sun_form div:nth-child(6){
+    -ms-transform : rotate(225deg);
+    -webkit-transform : rotate(225deg);
+    transform : rotate(225deg);
+  }
+  .sun_form div:nth-child(7){
+    -ms-transform : rotate(270deg);
+    -webkit-transform : rotate(270deg);
+    transform : rotate(270deg);
+  }
+  .sun_form div:nth-child(8){
+    -ms-transform : rotate(315deg);
+    -webkit-transform : rotate(315deg);
+    transform : rotate(315deg);
+  }
+  @keyframes sun_center_appear{
+    to{
+      height : 50%;
+      width : 50%;
+      top : 25%;
+      left : 25%;
+    }
+  }
+  @keyframes sun_arrow_appear{
+    0%{
+      top : 50%;
+      opacity : 0;
+    }
+    50%{
+      top : 50%;
+      opacity : 0;
+    }
+    100%{
+      opacity : 1;
+      top : 20px;
+    }
+  }
+  @keyframes sun_turn{
+    from{
+      -ms-transform : rotate(0deg);
+      -webkit-transform : rotate(0deg);
+      transform : rotate(0deg);
+    }
+    to{
+      -ms-transform : rotate(360deg);
+      -webkit-transform : rotate(360deg);
+      transform : rotate(360deg);
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  /*.added-city {
+    width: 65%;
+  }*/
+}
+
+@media (max-width: 991px) {
+/*.added-city {
+  margin-bottom: 20px;
+  width: 85%;
+  }*/
+}
+
+
+@media (max-width: 767px) {
+  .added-city, .weather-item{
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .weather-description{
+    .weather-description-footer{
+
+      p{
+        align-items: flex-start;
+      }
+    }
+  }
+  .weather-item-footer{
+    display: flex;
+    flex-direction: column;
+  }
+}

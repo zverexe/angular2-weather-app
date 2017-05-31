@@ -1,0 +1,688 @@
+/* You can add global styles to this file, and also import other style files */
+label{
+    font-weight:inherit;
+}
+body{
+    
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    color: inherit;
+    &:hover{
+        color: inherit;
+    }
+}
+
+
+/*
+* Reset default Bootstrap padding/margins
+ */
+
+.container-fluid, .col-sm-12{
+    padding: 0;
+}
+
+.row{
+    margin: 0;
+}
+
+/*
+* Forecast tab icons
+ */
+.forecast-icons, .added-city .weather-description{
+    .icon {
+        position: relative;
+        display: inline-block;
+        width: 12em;
+        height: 10em;
+        font-size: 1em;
+    }
+    .sun {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        width: 3em;
+        height: 3em;
+        margin: -1.25em;
+        background: #ffc107;
+        border-radius: 50%;
+        border: solid 8px #ffee58;
+        -webkit-animation-name: sunEffect;
+        -moz-animation-name: sunEffect;
+        -o-animation-name: sunEffect;
+        animation-name: sunEffect;
+        -webkit-animation: sunEffect 2s infinite;
+        animation: sunEffect 2s infinite;
+    }
+
+    .cloud {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 3em;
+        height: 3em;
+        margin: -1.25em;
+        background: #E4E9F6;
+        -webkit-border-radius: 50% 20% 20% 50%;
+        border-radius: 50%;
+        border-collapse: collapse;
+        z-index: 2;
+    }
+
+    .cloud-storm {
+        background: #37474F;
+    }
+
+    .cloud.cloud-storm:after {
+        background: #37474F;
+    }
+
+    .cloud.cloud-storm:before {
+        background: #37474F;
+    }
+
+    .cloud-gray {
+        top: 48%;
+        left: 56%;
+        width: 2.5em;
+        height: 2.5em;
+        background: #989CA4;
+        z-index: 1;
+        transform: scale(0.1) translate(3em, -3em);
+        -webkit-animation-name: cloudEffect;
+        -moz-animation-name: cloudEffect;
+        -o-animation-name: cloudEffect;
+        animation-name: cloudEffect;
+        -webkit-animation: cloudEffect 5s linear infinite;
+        animation: cloudEffect 5s linear infinite;
+    }
+
+    .cloud-gray:after {
+        background: #989CA4 !important;
+        z-index: 1;
+    }
+
+    .cloud-gray:before {
+        background: #989CA4 !important;
+        z-index: 1;
+    }
+
+    .cloud:after {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -25px;
+        display: block;
+        width: 3.5em;
+        height: 3.5em;
+        transform: rotate(90deg);
+        background: #E4E9F6;
+        -webkit-border-radius: 50% 20% 20% 50%;
+        border-radius: 50% 20% 20% 50%;
+        z-index: 2;
+    }
+
+    .cloud:before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: -40px;
+        display: block;
+        width: 2.8em;
+        height: 2.8em;
+        transform: rotate(90deg);
+        background: #E4E9F6;
+        -webkit-border-radius: 50% 0 50% 50%;
+        border-radius: 50% 0 50% 50%;
+        z-index: 2;
+    }
+
+    .drops {
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 10px;
+        width: 1.2em;
+        height: 1.2em;
+        border: none;
+        -webkit-border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        box-shadow: -25px 5px 0 -4px #2196f3;
+        background: #2196f3;
+        -webkit-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg);
+        z-index: 3;
+        -webkit-animation-name: rainEffect;
+        -moz-animation-name: rainEffect;
+        -o-animation-name: rainEffect;
+        animation-name: rainEffect;
+        -webkit-animation: rainEffect 2s linear infinite;
+        animation: rainEffect 2s linear infinite;
+    }
+
+    .drops-rain {
+        position: absolute;
+        margin-top: 100px;
+        margin-left: -20px;
+        width: 1.2em;
+        height: 1.2em;
+        border: none;
+        -webkit-border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        box-shadow: -25px 10px 0 -4px #2196f3;
+        background: #2196f3;
+        -webkit-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg);
+        z-index: 3;
+        -webkit-animation-name: rainEffect;
+        -moz-animation-name: rainEffect;
+        -o-animation-name: rainEffect;
+        animation-name: rainEffect;
+        -webkit-animation: rainEffect 2s infinite;
+        animation: rainEffect 2s infinite;
+    }
+
+    .snowflakes {
+        position: absolute;
+        font-size: 2em;
+        margin-top: 50px;
+        margin-left: 8px;
+        color: #fff;
+        text-shadow: -30px 15px 0px #fff;
+        -webkit-animation-name: snowEffect;
+        -moz-animation-name: snowEffect;
+        -o-animation-name: snowEffect;
+        animation-name: snowEffect;
+        -webkit-animation: snowEffect 2s linear infinite;
+        animation: snowEffect 2s linear infinite;
+        z-index: 4;
+    }
+
+    .thunderbolt {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        top: 13px;
+        left: 15px;
+        background: #ffff00;
+        transform: skew(-25deg);
+        margin-left: -20px;
+        margin-top: 20px;
+        z-index: 3;
+        -webkit-animation-name: thunderEffect;
+        -moz-animation-name: thunderEffect;
+        -o-animation-name: thunderEffect;
+        animation-name: thunderEffect;
+        -webkit-animation: thunderEffect 3s step-end infinite alternate;
+        animation: thunderEffect 3s step-end infinite alternate;
+    }
+
+    .thunderbolt:before {
+        content: '';
+        position: absolute;
+        top: 11px;
+        left: 0px;
+        width: 25px;
+        height: 8px;
+        background: #ffff00;
+    }
+
+    .thunderbolt:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 18px;
+        right: -11px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 20px solid #ffff00;
+        transform: skew(5deg);
+        z-index: 3;
+    }
+
+    .footer {
+        color: #fefefe;
+        font-size: 1em;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: #363636;
+    }
+
+    @keyframes sunEffect {
+        0% {
+            -webkit-transform: scale(1);
+        }
+        50% {
+            -webkit-transform: scale(1.2);
+        }
+        100% {
+            -webkit-transform: scale(1);
+        }
+    }
+
+
+
+    @keyframes cloudEffect {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 0.5;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1) translate(-150%, 0em);
+        }
+    }
+
+    @-moz-keyframes cloudEffect {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 0.5;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1) translate(-150%, 0em);
+        }
+    }
+
+    @-o-keyframes cloudEffect {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 0.5;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1) translate(-150%, 0em);
+        }
+    }
+
+    @keyframes cloudEffect {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 0.5;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1) translate(-150%, 0em);
+        }
+    }
+
+    @-webkit-keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @-o-keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @-o-keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @keyframes rainEffect {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+        }
+        50% {
+            bottom: -20px;
+            opacity: 1;
+        }
+        100% {
+            bottom: -30px;
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes snowEffect {
+        from {
+            top: -50px;
+            opacity: 1;
+        }
+        to {
+            top: 15px;
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes snowEffect {
+        from {
+            top: -50px;
+            opacity: 1;
+        }
+        to {
+            top: 15px;
+            opacity: 0;
+        }
+    }
+
+    @-o-keyframes snowEffect {
+        from {
+            top: -50px;
+            opacity: 1;
+        }
+        to {
+            top: 15px;
+            opacity: 0;
+        }
+    }
+
+    @keyframes snowEffect {
+        from {
+            top: -50px;
+            opacity: 1;
+        }
+        to {
+            top: 15px;
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes thunderEffect {
+        50% {
+            border-color: #fff;
+        }
+    }
+
+    @-moz-keyframes thunderEffect {
+        50% {
+            border-color: #fff;
+        }
+    }
+
+    @-o-keyframes thunderEffect {
+        50% {
+            border-color: #fff;
+        }
+    }
+
+    @keyframes thunderEffect {
+        0% {
+            visibility: hidden;
+        }
+        12.5% {
+            visibility: visible;
+        }
+        25% {
+            visibility: hidden;
+        }
+        37.5% {
+            visibility: hidden;
+        }
+        50% {
+            visibility: hidden;
+        }
+        75% {
+            visibility: visible;
+        }
+        100% {
+            visibility: hidden;
+        }
+    }
+}
+
+.added-city {
+    .weather-description {
+        .icon {
+            height: auto;
+        }
+    }
+}
+
+
+.tab-content{
+    color: #fff;
+    padding: 10px 20px 0 20px;
+    .weather-description{
+        width: 200px;
+    }
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #000;
+    background-color: #fff;
+    border: 0;
+    opacity: 0.4;
+    font-weight: 600;
+    border-radius: 0;
+}
+
+.nav-tabs{
+    border-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    .nav-link{
+        border: 0;
+    }
+    .nav-item{
+        margin-bottom: 0;
+    }
+    li{
+        width: 100%;
+        a {
+            text-align: center !important;
+            margin-right: 0;
+            border-bottom:0;
+        }
+    }
+}
+
+.mat-card{
+    color: #ffffff;
+    font-family: 'Lato', sans-serif !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.current-city{
+
+}
+.user-city{
+    margin: 20px 0;
+    .list-unstyled{
+        position: relative;
+        z-index: 1000;
+    }
+}
+
+.description{
+    font-weight: 400;
+}
+
+.location-temperature{
+    display: flex;
+    justify-content: center;
+    p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 300;
+        &:first-child{
+            margin-right: 30px;
+        }
+    }
+    .weather-item-footer{
+        p:first-child{
+            margin-left: 20px;
+        }
+    }
+
+    .temperature-wrapper{
+        display: flex;
+    }
+}
+
+.weather-item-footer{
+    display: flex;
+    justify-content: center;
+    p{
+        font-weight: 300;
+        &:first-child{
+            margin-right: 30px;
+        }
+    }
+}
+
+
+.city-name{
+    font-weight: 600;
+}
+
+.tab-content>.active{
+    display: flex;
+}
+
+@media (max-width: 991px) {
+    .added-city{
+        .weather-description{
+            .icon{
+                width: 4em;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-tabs{
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 500px) {
+   .location-temperature{
+       .temperature-wrapper{
+           flex-direction: column;
+       }
+       p:first-child{
+           margin-left: 0;
+       }
+   }
+}

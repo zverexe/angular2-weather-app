@@ -1,0 +1,259 @@
+.main-city {
+  /*background-image: url(../../assets/6062530-rain-storm-wallpaper.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;*/
+  background: transparent;
+  span {
+    font-weight: 500;
+  }
+  /* ################################################### */
+  /* ## RAIN ########################################### */
+  /* ################################################### */
+
+  .rain{
+    display: flex;
+    justify-content: center;
+  }
+
+  .cloud_form div {
+    background-color: white !important;
+    position: absolute;
+  }
+
+  .weather-description{
+    position: relative;
+  }
+  .weather{
+    opacity:0.5;
+
+  }  /* ################################################### */
+  /* ## CLOUD ########################################## */
+  /* ################################################### */
+
+  .cloud_form{
+    opacity : 0.5;
+    animation-name : cloud_appear;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+  }
+  .cloud_form div{
+    background-color : white;
+    position : absolute;
+  }
+  .cloud_form div:nth-child(1){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 5px;
+    top : 95px;
+  }
+  .cloud_form div:nth-child(2){
+    height : 40px;
+    width : 40px;
+    border-radius : 50%;
+    left : 155px;
+    top : 115px;
+  }
+  .cloud_form div:nth-child(3){
+    height : 40px;
+    width : 140px;
+    left : 35px;
+    top : 115px;
+  }
+  .cloud_form div:nth-child(4){
+    height : 100px;
+    width : 100px;
+    border-radius : 50%;
+    left : 35px;
+    top : 45px;
+  }
+  .cloud_form div:nth-child(5){
+    height : 60px;
+    width : 60px;
+    border-radius : 50%;
+    left : 120px;
+    top : 85px;
+  }
+  @keyframes cloud_appear{
+    to{
+      opacity : 1;
+    }
+  }
+
+  /* ################################################### */
+  /* ## RAIN ########################################### */
+  /* ################################################### */
+
+  .rain .cloud_form{
+    position : absolute;
+    top : -99px;
+    right: 220px;
+  }
+  .rain-drops{
+    position: absolute;
+    top: -70px;
+    right: 40px;
+  }
+  .rain .rain_form{
+    position : absolute;
+  }
+  .rain .rain_form:nth-child(1){
+    top : 126px;
+    right : 30px;
+  }
+  .rain .rain_form:nth-child(2){
+    top : 126px;
+    right : 30px;
+  }
+  .rain .rain_form:nth-child(3){
+    top : 136px;
+    right  : 120px;
+  }
+  .rain .rain_form:nth-child(3) div{
+    -webkit-animation-delay : 0.4s;
+    animation-delay : 0.4s;
+  }
+  .rain .rain_form:nth-child(4){
+    top : 136px;
+    right : 40px;
+  }
+  .rain .rain_form:nth-child(4) div{
+    -webkit-animation-delay : 0.2s;
+    animation-delay : 0.2s;
+  }
+  .rain .rain_form:nth-child(5){
+    top : 126px;
+    right  : 50px;
+  }
+  .rain .rain_form:nth-child(5) div{
+    -webkit-animation-delay : 0.8s;
+    animation-delay : 0.8s;
+  }
+  .rain .rain_form:nth-child(6){
+    top : 136px;
+    right  : 60px;
+  }
+  .rain .rain_form:nth-child(6) div{
+    -webkit-animation-delay : 0.1s;
+    animation-delay : 0.1s;
+  }
+  .rain .rain_form:nth-child(7){
+    top : 126px;
+    right  : 70px;
+  }
+  .rain .rain_form:nth-child(7) div{
+    -webkit-animation-delay : 0.7s;
+    animation-delay : 0.7s;
+  }
+  .rain .rain_form:nth-child(8){
+    top : 136px;
+    right  : 80px;
+  }
+  .rain .rain_form:nth-child(8) div{
+    -webkit-animation-delay : 0.1s;
+    animation-delay : 0.1s;
+  }
+  .rain .rain_form:nth-child(9){
+    top : 126px;
+    right  : 90px;
+  }
+  .rain .rain_form:nth-child(9) div{
+    -webkit-animation-delay : 0.5s;
+    animation-delay : 0.5s;
+  }
+  .rain .rain_form:nth-child(10){
+    top : 136px;
+    right  : 100px;
+  }
+  .rain .rain_form:nth-child(10) div{
+    -webkit-animation-delay : 0.3s;
+    animation-delay : 0.3s;
+  }
+  .rain .rain_form:nth-child(11){
+    top : 126px;
+    right  : 110px;
+  }
+  .rain .rain_form:nth-child(11) div{
+    -webkit-animation-delay : 0.9s;
+    animation-delay : 0.9s;
+  }
+  .rain .rain_form:nth-child(12){
+    top : 136px;
+    right  : 120px;
+  }
+  .rain .rain_form:nth-child(12) div{
+    -webkit-animation-delay : 0.6s;
+    animation-delay : 0.6s;
+  }
+  .rain .rain_form:nth-child(13){
+    top : 126px;
+    right  : 130px;
+  }
+  .rain .rain_form:nth-child(13) div{
+    -webkit-animation-delay : 0.2s;
+    animation-delay : 0.2s;
+  }
+  .rain .rain_form:nth-child(14){
+    top : 136px;
+    right  : 140px;
+  }
+  .rain .rain_form:nth-child(14) div{
+    -webkit-animation-delay : 0.1s;
+    animation-delay : 0.1s;
+  }
+  .rain .rain_form:nth-child(15){
+    top : 126px;
+    right  : 150px;
+  }
+  .rain .rain_form:nth-child(15) div{
+    -webkit-animation-delay : 0.9s;
+    animation-delay : 0.9s;
+  }
+  .rain_form{
+    height : 50px;
+    width : 5px;
+    position : relative;
+    -ms-transform : rotate(30deg);
+    -webkit-transform : rotate(30deg);
+    transform : rotate(30deg);
+  }
+  .rain_form div{
+    top : 0px;
+    left : 0px;
+    height : 0px;
+    width : 5px;
+    background-color : #078BD2;
+    border-radius : 5px;
+    position : absolute;
+    animation-name : rain_fall;
+    animation-duration: 0.4s;
+    -webkit-animation-timing-function : linear;
+    animation-timing-function : linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+  }
+  @keyframes rain_fall{
+    0%{
+      height : 0px;
+      top : 0px;
+    }
+    20% {
+      height : 40%;
+      top : 0px;
+    }
+    80% {
+      height : 40%;
+      top : 70%
+    }
+    100% {
+      height : 0px;
+      top : 100%;
+    }
+  }
+
+
+}
