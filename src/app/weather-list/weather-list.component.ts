@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { WeatherService } from '../service/weather.service';
@@ -12,6 +12,9 @@ import { Week } from '../week';
 })
 export class WeatherListComponent implements OnInit {
 
+  @Output() notify: EventEmitter<string> = new EventEmitter();
+
+
   currentCity: WeatherItem;
 
   weatherItems: WeatherItem[];
@@ -22,19 +25,23 @@ export class WeatherListComponent implements OnInit {
   ngOnInit() {
     this.weatherService.getCoordinates()
         .subscribe(data=> {
-          this.weatherService.loadCurrentCity(data.lat, data.lon)
+          this.weatherService.loadCurrentCity(data.latitude, data.longitude)
               .subscribe(data=>{
                   let dat = new Date(data.dt*1000).toDateString();
                   let formattedTime = dat.slice(0,10);
                 this.currentCity = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max,
                     data.weather[0].main, formattedTime, data.main.humidity, data.main.pressure);
-                console.log(data);
+                console.log(data.latitude, data.longitude);
+
+                 this.notify.emit(data.weather[0].main);
               })
         });
+        
     this.weatherItems = this.weatherService.getItem();
+
       this.weatherService.getCoordinates()
           .subscribe(data=> {
-              this.weatherService.loadCFiveDay(data.lat, data.lon)
+              this.weatherService.loadCFiveDay(data.latitude, data.longitude)
                   .subscribe(data=>{
                       data.list.forEach(item => {
                           let dat = new Date(item.dt*1000).toDateString();

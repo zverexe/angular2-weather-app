@@ -13,13 +13,13 @@ export class WeatherService {
 
 
     getCoordinates(){
-        return this.http.get('http://ip-api.com/json')
+        return this.http.get('https://ipapi.co/json/')
             .map(res=>res.json());
     }
 
 
     loadCurrentCity(lat, lon): Observable<any>{
-    return this.http.get('http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=7bb9b8b2848e5f49e26dcabb2a77fa38&units=metric')
+    return this.http.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=7bb9b8b2848e5f49e26dcabb2a77fa38&units=metric')
         .map(res=> res.json())
         .catch(error => {
           console.error(error);
@@ -28,7 +28,7 @@ export class WeatherService {
   }
 
     loadCFiveDay(lat, lon): Observable<any>{
-        return this.http.get('http://api.openweathermap.org/data/2.5/forecast/daily?lat='+lat+'&lon='+lon+'&appid=7bb9b8b2848e5f49e26dcabb2a77fa38&units=metric&cnt=5')
+        return this.http.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/daily?lat='+lat+'&lon='+lon+'&appid=7bb9b8b2848e5f49e26dcabb2a77fa38&units=metric&cnt=5')
             .map(res=> res.json())
             .catch(error => {
                 console.error(error);
@@ -37,7 +37,7 @@ export class WeatherService {
     }
 
   searchCity(city: string){
-        return this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=7bb9b8b2848e5f49e26dcabb2a77fa38&units=metric')
+        return this.http.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=7bb9b8b2848e5f49e26dcabb2a77fa38&units=metric')
             .map(res=> res.json())
             .catch(error => {
                 console.error(error);
@@ -46,7 +46,12 @@ export class WeatherService {
   }
 
   addNewCity(weatherItem){
-      return WeatherItems.push(weatherItem);
+       if(WeatherItems.length>2){
+        WeatherItems.pop();
+        return WeatherItems.unshift(weatherItem);
+      }else{
+        return WeatherItems.unshift(weatherItem);
+      }  
   }
 
   getItem(){

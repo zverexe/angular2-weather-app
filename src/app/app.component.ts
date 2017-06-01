@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+   weatherDesc: string;
+
+  background(weather){
+  		return this.weatherDesc = weather;
+  	}
 }

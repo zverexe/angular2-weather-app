@@ -1,3 +1,8 @@
+<div class="page-wrapper" [ngClass]="{
+                                    'sun-background': weatherDesc == 'Clear',
+                                    'rain-background': weatherDesc == 'Rain',
+                                    'clouds-background': weatherDesc == 'Clouds'
+                                      }">
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
@@ -13,8 +18,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
-      <app-weather-list></app-weather-list>
+      <app-weather-list (notify)="background($event)"></app-weather-list>
     </div>
   </div>
+</div>
 </div>
 
