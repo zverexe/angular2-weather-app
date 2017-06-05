@@ -548,6 +548,13 @@ a{
     }
 }
 
+
+.page-wrapper{
+    min-height: calc(100vh);     /* Chrome */
+    min-height: -moz-calc(100vh);     /* Firefox */
+    min-height: calc(100vh);
+}
+
 .added-city {
     .weather-description {
         .icon {
@@ -606,7 +613,7 @@ a{
 
 }
 .user-city{
-    margin: 20px 0;
+   margin-top: 20px;
     .list-unstyled{
         position: relative;
         z-index: 1000;

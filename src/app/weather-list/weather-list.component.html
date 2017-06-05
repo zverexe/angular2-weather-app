@@ -3,64 +3,63 @@
     <div class="user-city">
       <h2 class="user-city-title">Weather in {{currentCity.city}}</h2>
       <div class="weather-item">
-       <div *ngIf="currentCity.description =='Clouds'">
+        <div *ngIf="currentCity.description =='Clouds'">
           <app-clouds [week] = "week" [currentCity] = "currentCity" [weatherItems] = "weatherItems" ></app-clouds>
         </div>
         <div *ngIf="currentCity.description =='Clear'">
           <app-sun [week] = week [currentCity] = "currentCity" [weatherItems] = "weatherItems" ></app-sun>
         </div>
-       <div *ngIf="currentCity.description =='Rain'">
+        <div *ngIf="currentCity.description =='Rain'">
           <app-rain [week] = week [currentCity] = "currentCity" [weatherItems] = "weatherItems" ></app-rain>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="cities-wrapper">
-        <div class="cities-list">
-          <md-card class="added-city" *ngFor="let weatherItem of weatherItems">
-            <div>
-              <p>{{weatherItem.date}}</p>
-              <h4 class="city-name">{{weatherItem.city}}</h4>
-              <div class="weather-description">
-                <p class="description">{{weatherItem.description}}</p>
-                <div *ngIf="weatherItem.description=='Clouds'" class="icon">
-                  <div id="clouds">
-                    <div class="cloud">
-                    </div>
-                    <div class="cloud cloud-gray">
-                    </div>
-                  </div>
-                </div>
-                <div *ngIf="weatherItem.description=='Clear'" class="icon">
-                  <div id="clear">
-                    <div class="sun">
-                    </div>
-                  </div>
-                </div>
-                <div *ngIf="weatherItem.description=='Rain'" class="icon">
-                  <div id="rain">
-                    <div class="cloud">
-                      <div class="drops"></div>
-                      <div class="drops-rain"></div>
-                    </div>
-                  </div>
-                </div>
-                <div *ngIf="weatherItem.description=='Thunderstorm'" class="icon">
-                  <div id="thunderstorm">
-                    <div class="cloud cloud-storm">
-                      <div class="thunderbolt"></div>
-                    </div>
+<div *ngIf="weatherItems" class="row">
+  <div class="col-sm-12">
+    <div class="cities-wrapper">
+      <div class="cities-list">
+        <md-card class="added-city" *ngFor="let weatherItem of weatherItems">
+          <div>
+            <p>{{weatherItem.date}}</p>
+            <h4 class="city-name">{{weatherItem.city}}</h4>
+            <div class="weather-description">
+              <p class="description">{{weatherItem.description}}</p>
+              <div *ngIf="weatherItem.description=='Clouds'" class="icon">
+                <div id="clouds">
+                  <div class="cloud">
                   </div>
                   <div class="cloud cloud-gray">
                   </div>
                 </div>
               </div>
-              <div class="location-temperature">
-                <div class="temperature-wrapper">
+              <div *ngIf="weatherItem.description=='Clear'" class="icon">
+                <div id="clear">
+                  <div class="sun">
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="weatherItem.description=='Rain'" class="icon">
+                <div id="rain">
+                  <div class="cloud">
+                    <div class="drops"></div>
+                    <div class="drops-rain"></div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="weatherItem.description=='Thunderstorm'" class="icon">
+                <div id="thunderstorm">
+                  <div class="cloud cloud-storm">
+                    <div class="thunderbolt"></div>
+                  </div>
+                </div>
+                <div class="cloud cloud-gray">
+                </div>
+              </div>
+            </div>
+            <div class="location-temperature">
+              <div class="temperature-wrapper">
                 <p>
                   <span>Min:</span>
                   {{weatherItem.minTemperature}}
@@ -69,21 +68,20 @@
                   <span>Max:</span>
                   {{weatherItem.maxTemperature}}
                 </p>
-                </div>
-                <div class="weather-item-footer">
-                  <p>
-                    <span>Humidity:</span>
-                    {{weatherItem.pressure}}
-                  </p>
-                  <p>
-                    <span>Pressure:</span>
-                    {{weatherItem.humidity}}%
-                  </p>
-                </div>
+              </div>
+              <div class="weather-item-footer">
+                <p>
+                  <span>Humidity:</span>
+                  {{weatherItem.pressure}}
+                </p>
+                <p>
+                  <span>Pressure:</span>
+                  {{weatherItem.humidity}}%
+                </p>
               </div>
             </div>
-          </md-card>
-        </div>
+          </div>
+        </md-card>
       </div>
     </div>
   </div>

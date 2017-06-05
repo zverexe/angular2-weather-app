@@ -7,7 +7,7 @@ import { WeatherItems } from '../weather.data';
 @Component({
   selector: 'app-weather-search',
   templateUrl: './weather-search.component.html',
-  styleUrls: ['./weather-search.component.css']
+  styleUrls: ['weather-search.component.scss']
 })
 export class WeatherSearchComponent implements OnInit {
 
@@ -26,10 +26,7 @@ export class WeatherSearchComponent implements OnInit {
             let formattedTime = dat.slice(0,10);
           const weatherItem = new WeatherItem(data.name, data.main.temp_min, data.main.temp_max, data.weather[0].main,
               formattedTime, data.main.humidity, data.main.pressure);
-
           this.weatherService.addNewCity(weatherItem);
         })
-
   }
-
 }

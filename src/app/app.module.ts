@@ -8,7 +8,6 @@ import {MdButtonModule, MdCheckboxModule, MdCardModule, MdInputModule} from '@an
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { WeatherItemComponent } from './weather-item/weather-item.component';
 import { WeatherListComponent } from './weather-list/weather-list.component';
 
 import { WeatherService } from './service/weather.service';
@@ -20,14 +19,13 @@ import { RainComponent } from './rain/rain.component';
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherItemComponent,
     WeatherListComponent,
     WeatherSearchComponent,
     CloudsComponent,
     SunComponent,
     RainComponent
-
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -37,8 +35,8 @@ import { RainComponent } from './rain/rain.component';
     MdCardModule,
     MdInputModule,
     NgbModule.forRoot()
-
   ],
+
   providers: [
     WeatherService
   ],

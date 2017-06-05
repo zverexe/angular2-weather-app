@@ -3,24 +3,19 @@
                                     'rain-background': weatherDesc == 'Rain',
                                     'clouds-background': weatherDesc == 'Clouds'
                                       }">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <header>
-        <div class="header-wrapper">
-      <h3 class=" text-left">Weather App</h3>
-        <app-weather-search></app-weather-search>
-        </div>
-      </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <header>
+          <div class="header-wrapper">
+            <h3 class=" text-left">Weather App</h3>
+            <app-weather-search></app-weather-search>
+          </div>
+        </header>
+      </div>
     </div>
   </div>
+  <app-weather-list (notify)="background($event)"></app-weather-list>
 </div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <app-weather-list (notify)="background($event)"></app-weather-list>
-    </div>
-  </div>
-</div>
-</div>
+
 
