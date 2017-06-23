@@ -1,4 +1,10 @@
 # WeatherApp
+You can check today's weather and 5 days forecast in your home city. Also, you can add 3 cities and check their weather as well.
+Working app deployed on Firebase: https://weather-app-4b5ae.firebaseapp.com/
+
+
+=============================================================================================================================
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
