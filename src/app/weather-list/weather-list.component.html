@@ -12,6 +12,9 @@
         <div *ngIf="currentCity.description =='Rain'">
           <app-rain [week] = week [currentCity] = "currentCity" [weatherItems] = "weatherItems" ></app-rain>
         </div>
+        <div *ngIf="currentCity.description =='Storm'">
+          <app-thunderstorm [week] = week [currentCity] = "currentCity" [weatherItems] = "weatherItems" ></app-thunderstorm>
+        </div>
       </div>
     </div>
   </div>

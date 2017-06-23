@@ -15,6 +15,7 @@ import { WeatherSearchComponent } from './weather-search/weather-search.componen
 import { CloudsComponent } from './clouds/clouds.component';
 import { SunComponent } from './sun/sun.component';
 import { RainComponent } from './rain/rain.component';
+import { ThunderstormComponent } from './thunderstorm/thunderstorm.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RainComponent } from './rain/rain.component';
     WeatherSearchComponent,
     CloudsComponent,
     SunComponent,
-    RainComponent
+    RainComponent,
+    ThunderstormComponent
   ],
 
   imports: [

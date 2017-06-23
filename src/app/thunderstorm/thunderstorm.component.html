@@ -1,0 +1,102 @@
+<md-card class="main-city">
+  <div class="text-center">
+    <p>{{currentCity.date}}</p>
+    <h2 class="city-name">{{currentCity.city}}</h2>
+    <div class="weather-description">
+      <h4 class="description">{{currentCity.description}}</h4>
+      <div class="stormy"></div>
+    </div>
+    <div class="location-temperature">
+      <p>
+        <span>Min</span>
+        {{currentCity.minTemperature}}
+      </p>
+      <p>
+        <span>Max</span>
+        {{currentCity.maxTemperature}}
+      </p>
+    </div>
+    <div class="weather-item-footer">
+      <p>
+        <span>Humidity:</span>
+        {{currentCity.pressure}}
+      </p>
+      <p>
+        <span>Pressure:</span>
+        {{currentCity.humidity}}%
+      </p>
+    </div>
+  </div>
+  <ul class="list-unstyled">
+    <ngb-tabset>
+      <ngb-tab *ngFor="let day of week">
+        <ng-template ngbTabTitle>
+          <p>{{day.date}}</p>
+          <div class="location-temperature">
+            <p>
+              <span>Min</span>
+              {{day.minTemperature}}℃
+            </p>
+            <p>
+              <span>Max</span>
+              {{day.maxTemperature}}℃
+            </p>
+          </div>
+          <p class="description">{{day.description}}</p>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div class="weather-description">
+            <div>
+              <p class="parameter-title">Pressure: <span>{{day.pressure}}</span></p>
+              <p class="parameter-title">Humidity: <span>{{day.humidity}}%</span></p>
+              <p class="parameter-title" placement="top" ngbTooltip="meter/sec">
+                Wind: <span>{{day.wind}}</span>
+              </p>
+            </div>
+            <div class="weather-description-footer">
+              <p class="parameter-title">Day temperature:
+                <span>{{day.dayTemp}}℃</span>
+              </p>
+              <p class="parameter-title">Night Temperature
+                <span>{{day.nightTemp}}℃</span>
+              </p>
+            </div>
+          </div>
+          <div class="forecast-icons">
+            <div *ngIf="day.description=='Clouds'" class="icon">
+              <div id="clouds">
+                <div class="cloud">
+                </div>
+                <div class="cloud cloud-gray">
+                </div>
+              </div>
+            </div>
+            <div *ngIf="day.description=='Clear'" class="icon">
+              <div id="clear">
+                <div class="sun">
+                </div>
+              </div>
+            </div>
+            <div *ngIf="day.description=='Rain'" class="icon">
+              <div id="rain">
+                <div class="cloud">
+                  <div class="drops"></div>
+                  <div class="drops-rain"></div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="day.description=='Thunderstorm'" class="icon">
+              <div id="thunderstorm">
+                <div class="cloud cloud-storm">
+                  <div class="thunderbolt"></div>
+                </div>
+              </div>
+              <div class="cloud cloud-gray">
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </ul>
+</md-card>
